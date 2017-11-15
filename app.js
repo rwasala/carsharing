@@ -29,7 +29,7 @@ app.post('/customer', function (req, res) {
 	const user = req.body;
 	user.reservations = [];
 	user.validated = false;
-	if (user.login === undefined || user.password === undefined) {
+	if (user.login === undefined || user.password === undefined || user.password.length < 1) {
 		statusCode = 400;
 	} else {
 		if (customerList.filter(customer => customer.login === user.login).length !== 0) {
