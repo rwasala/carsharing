@@ -30,7 +30,7 @@ app.post('/customer', function (req, res) {
     user.reservations = [];
     user.validated = false;
     if (user.login === undefined || user.password === undefined || user.password.length < 1) {
-        statusCode = 400;
+        statusCode = 401;
     } else {
         if (customerList.filter(customer => customer.login === user.login).length !== 0) {
             statusCode = 409;
