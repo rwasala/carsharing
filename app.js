@@ -130,7 +130,7 @@ app.patch('/validate/:login', function (req, res) {
         } else {
             customerIndex = customerList.findIndex((customer => customer.login === login));
             if (customerIndex === -1) {
-                statusCode = 406;
+                statusCode = 404;
             } else {
                 customerList[customerIndex].validated = true;
             }
@@ -155,7 +155,7 @@ app.post('/createReservation', function (req, res) {
             statusCode = 403;
         } else {
             if (customer.creditCardNumber === undefined || customer.validated === false) {
-                statusCode = 412;
+                statusCode = 405;
             } else {
                 const car = carList[carId - 1];
                 if (car === undefined) {

@@ -112,7 +112,7 @@ describe('Carsharing', function () {
             .set('Authorization', `Bearer ${authToken}`);
 
         // Then
-        response.statusCode.should.be.equal(412);
+        response.statusCode.should.be.equal(405);
         getCustomerResponse.body['reservations'].should.be.empty();
     });
 
