@@ -67,7 +67,7 @@ describe('Carsharing', function () {
         response.body['token'].should.not.be.empty();
     });
 
-    it('Check if user is able to add credit card', function* () {
+    it('User should be able to add credit card', function* () {
         // Given
         const user = {
             login: guid.raw(),
