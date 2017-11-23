@@ -68,7 +68,7 @@ app.post('/addCreditCard', function (req, res) {
         statusCode = 400;
     } else {
         const token = req.headers.authorization.replace("Bearer ", "");
-        const customer = customerList.filter(customer => customer.token === token)[0];
+        customer = customerList.filter(customer => customer.token === token)[0];
         if (customer === undefined) {
             statusCode = 403;
         } else {
