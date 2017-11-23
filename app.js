@@ -24,6 +24,10 @@ app.get('/', function (req, res) {
     res.sendStatus(200);
 });
 
+app.get('/1', function (req, res) {
+    res.sendStatus(200);
+});
+
 app.post('/customer', function (req, res) {
     let statusCode = 201;
     const user = req.body;
