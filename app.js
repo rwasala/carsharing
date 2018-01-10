@@ -21,7 +21,7 @@ app.listen(3000, function () {
 });
 
 app.get('/', function (req, res) {
-    res.sendStatus(400);
+    res.sendStatus(200);
 });
 
 app.post('/customer', function (req, res) {
