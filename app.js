@@ -151,10 +151,10 @@ app.post('/createReservation', function (req, res) {
                 if (!car) {
                     statusCode = 404;
                 } else {
-                    if (car.avaiable === false) {
+                    if (car.available === false) {
                         statusCode = 409;
                     } else {
-                        car.avaiable = false;
+                        car.available = false;
                         customer.reservations.push({
                             carId,
                             when: Date.now()
@@ -183,7 +183,7 @@ const initialize = function () {
         carList.push({
             id: i,
             carName: "Car " + i,
-            avaiable: true
+            available: true
         });
     }
 }
